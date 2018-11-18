@@ -13,6 +13,8 @@ set wildmenu
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.fzf
+
 set ts=4
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
@@ -47,9 +49,6 @@ nmap <F3> :NERDTreeToggle<CR>
 nmap <F2> :TagbarToggle<CR>
 "保存文件
 map <silent> <c-s> :update<CR> 
-" 搜索快捷键
-map <silent> <Space>sd :Ack<Space>
-map <Space>sb :/
 " 进入模式
 nmap <Space>c :
 " 关闭当前buffer
@@ -64,9 +63,12 @@ nmap <Space>db :DlvToggleBreakpoint<CR>
 imap <Space>ds <ESC>:q<CR>
 " 格式化代码
 map  <C-S-l>  :!go fmt<CR>
-"  设置<C-u> <C-w>
-nmap <C-w> :<ESC>daw
+"  设置<C-u>
 map <C-u> :<ESC>d0
+"  搜索
+map  <Space>sf  :Files<CR>
+map  <Space>sb  :Lines<CR>
+map  <Space>sd  :Ag<Space>
 filetype off                  " required
 colorscheme gruvbox
 
@@ -75,9 +77,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'morhetz/gruvbox'
-Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'mileszs/ack.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
@@ -92,6 +92,8 @@ Plugin 'Shougo/vimproc.vim', {'do' : 'make'}
 Plugin 'Shougo/vimshell'
 Plugin 'sebdah/vim-delve'
 Plugin  'sidorares/node-vim-debugger'
+" 搜索引擎
+Plugin 'junegunn/fzf.vim'
 call vundle#end()            " required
 " 记住光标位置
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
