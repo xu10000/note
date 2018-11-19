@@ -25,8 +25,11 @@ let Tlist_Exit_OnlyWindow=1
 "设置airline箭头
 let g:airline_powerline_fonts = 1
 " 设置airline颜色
-let g:airline_theme='luna'
+let g:airline_theme='bubblegum'
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+" 设置关灯效果
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
 
 nmap <Leader>b :bp<CR>
 nmap <Leader>f :bn<CR>
@@ -69,6 +72,8 @@ map <C-u> :<ESC>d0
 map  <Space>sf  :Files<CR>
 map  <Space>sb  :Lines<CR>
 map  <Space>sd  :Ag<Space>
+nmap <Leader>l  :Limelight<CR>
+
 filetype off                  " required
 colorscheme gruvbox
 
@@ -94,9 +99,11 @@ Plugin 'sebdah/vim-delve'
 Plugin  'sidorares/node-vim-debugger'
 " 搜索引擎
 Plugin 'junegunn/fzf.vim'
+"  设置关灯效果
+Plugin 'junegunn/limelight.vim'
+
 call vundle#end()            " required
 " 记住光标位置
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
-
 filetype plugin indent on    " required
 
