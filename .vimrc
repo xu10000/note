@@ -30,6 +30,9 @@ let g:airline_theme='bubblegum'
 " 设置关灯效果
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
+" 注释配置
+let g:NERDSpaceDelims = 1
+let g:NERDCustomDelimiters = { 'c': { 'left': '','right': '' } }
 
 nmap <Leader>b :bp<CR>
 nmap <Leader>f :bn<CR>
@@ -63,15 +66,15 @@ nmap <tab> :bn<cr>
 " debug go
 nmap <Space>dl :DlvDebug<CR>y<CR>:$<CR>i
 nmap <Space>db :DlvToggleBreakpoint<CR>
-imap <Space>ds <ESC>:q<CR>
+nmap <Space>ds <ESC>:q<CR>
 " 格式化代码
 map  <C-S-l>  :!go fmt<CR>
 "  设置<C-u>
-map <C-u> :<ESC>d0
+nmap <C-u> :<ESC>d0
 "  搜索
-map  <Space>sf  :Files<CR>
-map  <Space>sb  :Lines<CR>
-map  <Space>sd  :Ag<Space>
+nmap  <Space>sf  :Files<CR>
+nmap  <Space>sb  :Lines<CR>
+nmap  <Space>sd  :Ag<Space>
 nmap <Leader>l  :Limelight<CR>
 
 filetype off                  " required
@@ -96,11 +99,14 @@ Plugin 'honza/vim-snippets'
 Plugin 'Shougo/vimproc.vim', {'do' : 'make'}
 Plugin 'Shougo/vimshell'
 Plugin 'sebdah/vim-delve'
-Plugin  'sidorares/node-vim-debugger'
 " 搜索引擎
 Plugin 'junegunn/fzf.vim'
 "  设置关灯效果
 Plugin 'junegunn/limelight.vim'
+" go 代码提示
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
+" 注释插件
+Plugin 'scrooloose/nerdcommenter'
 
 call vundle#end()            " required
 " 记住光标位置
