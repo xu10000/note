@@ -1,0 +1,26 @@
+version: '3'
+services:
+  mysql_server:
+    image: mysql:5.6
+    container_name: mysql_server
+    ports:
+      - 3306:3306
+    volumes:
+      - /home/xzt/soft/settlementSystemData/mysql/data:/var/lib/mysql
+      - /home/xzt/soft/settlementSystemData/mysql/conf/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
+    environment:
+      MYSQL_ROOT_PASSWORD: "123456"
+
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - /home/xzt/soft/settlementSystemData/redis:/data
+    command: redis-server --appendonly yes
+  mongodb:
+    image: mongo:3.2.20
+    ports:
+      - "27017:27017"
+    volumes: 
+      - /home/xzt/soft/settlementSystemData/mongodb:/etc/mongo
