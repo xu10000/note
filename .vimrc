@@ -14,7 +14,6 @@ set wildmenu
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=~/.fzf
-
 set ts=4
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
@@ -33,7 +32,7 @@ let g:limelight_conceal_ctermfg = 240
 " 注释配置
 let g:NERDSpaceDelims = 1
 let g:NERDCustomDelimiters = { 'c': { 'left': '','right': '' } }
-
+let g:go_fmt_command = "goimports"
 nmap <Leader>b :bp<CR>
 nmap <Leader>f :bn<CR>
 
@@ -104,7 +103,7 @@ Plugin 'junegunn/fzf.vim'
 "  设置关灯效果
 Plugin 'junegunn/limelight.vim'
 " go 代码提示
-Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'stamblerre/gocode', {'rtp': 'vim/'}
 " 注释插件
 Plugin 'scrooloose/nerdcommenter'
 
@@ -112,4 +111,5 @@ call vundle#end()            " required
 " 记住光标位置
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 filetype plugin indent on    " required
+
 
