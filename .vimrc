@@ -33,6 +33,9 @@ let g:limelight_conceal_ctermfg = 240
 let g:NERDSpaceDelims = 1
 let g:NERDCustomDelimiters = { 'c': { 'left': '','right': '' } }
 let g:go_fmt_command = "goimports"
+" let g:interestingWordsRandomiseColors = 1
+let g:interestingWordsTermColors = [ '222']
+
 nmap <Leader>b :bp<CR>
 nmap <Leader>f :bn<CR>
 
@@ -106,7 +109,7 @@ Plugin 'junegunn/limelight.vim'
 Plugin 'stamblerre/gocode', {'rtp': 'vim/'}
 " 注释插件
 Plugin 'scrooloose/nerdcommenter'
-
+Plugin 'lfv89/vim-interestingwords'
 call vundle#end()            " required
 " 记住光标位置
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
