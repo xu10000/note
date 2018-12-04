@@ -5,14 +5,9 @@ service Example {
 	rpc Call(CallRequest) returns(CallResponse) {
 		option (google.api.http) = {
 			get: "/example/hello"
-			body: "*"
 		};
 	};
 
-}
-
-service Foo {
-	rpc Bar(EmptyRequest) returns(EmptyResponse) {};
 }
 
 message CallRequest {
@@ -23,8 +18,4 @@ message CallResponse {
 	string message = 2;
 }
 
-message EmptyRequest {
-}
 
-message EmptyResponse {
-}

@@ -43,6 +43,7 @@ require (
 	github.com/google/go-github v17.0.0+incompatible // indirect
 	github.com/google/uuid v1.1.0 // indirect
 	github.com/gotestyourself/gotestyourself v2.2.0+incompatible // indirect
+	github.com/grpc-ecosystem/grpc-gateway v1.5.2-0.20181119184639-d8ad87ee91e1
 	github.com/hashicorp/consul v1.4.0 // indirect
 	github.com/hashicorp/go-discover v0.0.0-20180831154906-f9c9239562a8 // indirect
 	github.com/hashicorp/go-hclog v0.0.0-20181001195459-61d530d6c27f // indirect
@@ -73,9 +74,13 @@ require (
 	github.com/lyft/protoc-gen-validate v0.0.11 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.1 // indirect
 	github.com/micro/cli v0.0.0-20180830071301-8b9d33ec2f19 // indirect
+	github.com/micro/examples v0.0.0-20181123171801-5c0726467e0d // indirect
+	github.com/micro/go-grpc v0.5.0
 	github.com/micro/go-log v0.0.0-20170512141327-cbfa9447f9b6 // indirect
 	github.com/micro/go-micro v0.14.1
+	github.com/micro/go-plugins v0.16.2 // indirect
 	github.com/micro/go-rcache v0.0.0-20180418165751-a581a57b5133 // indirect
+	github.com/micro/grpc-go v0.0.0-20180913204047-2c703400301b // indirect
 	github.com/micro/h2c v1.0.0 // indirect
 	github.com/micro/mdns v0.0.0-20160929165650-cdf30746f9f7 // indirect
 	github.com/micro/util v0.0.0-20181115195001-2d4f591dc538 // indirect
