@@ -4,7 +4,7 @@
   "acl_datacenter": "consul_datacenter",
   "acl_down_policy":"deny",
   "acl_default_policy": "deny",
-  "acl_agent_token": "zx27892509",
+  "acl_master_token": "zx27892509",
   "data_dir": "./data",
   "log_level": "INFO",
   "server": true,
