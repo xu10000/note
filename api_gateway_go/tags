@@ -1,0 +1,26 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Debug	syslog/syslog.go	/^	Debug *log.Logger$/;"	v
+Get_registry	help/registry.go	/^func Get_registry() registry.Registry {$/;"	f
+Hello	main.go	/^func (s *Say) Hello(c *gin.Context) {$/;"	f
+JWT_SECRET	middleware/auth/login.go	/^	JWT_SECRET = "asdaskdj2394u9dsjfsd2x"$/;"	v
+Jwt_auth	middleware/auth/verification.go	/^func Jwt_auth() gin.HandlerFunc {$/;"	f
+Login	middleware/auth/login.go	/^func Login() gin.HandlerFunc {$/;"	f
+Result	help/result.go	/^type Result struct {$/;"	t
+Say	main.go	/^type Say struct{}$/;"	t
+account_service_url	middleware/auth/login.go	/^func account_service_url() (string, error) {$/;"	f
+auth	middleware/auth/login.go	/^package auth$/;"	p
+auth	middleware/auth/verification.go	/^package auth$/;"	p
+help	help/registry.go	/^package help$/;"	p
+help	help/result.go	/^package help$/;"	p
+init	main.go	/^func init() {$/;"	f
+init	syslog/syslog.go	/^func init() {$/;"	f
+main	main.go	/^func main() {$/;"	f
+main	main.go	/^package main$/;"	p
+my_env	main.go	/^	my_env string$/;"	v
+syslog	syslog/syslog.go	/^package syslog$/;"	p
+token_string	middleware/auth/login.go	/^func token_string(result *help.Result) (string, error) {$/;"	f

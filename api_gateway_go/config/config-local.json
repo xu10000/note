@@ -1,0 +1,49 @@
+{
+	"test": "cc",
+    "redis": {
+        "host": "127.0.0.1",
+        "port": 6379
+    },
+    "gateway": {
+        "host": "127.0.0.1",
+        "name": "api_gateway_go3",
+        "port": 8888
+    },
+    "basePath": "/api/v1",
+    "consul": {
+		"token": "m123,@8dxzca90w",
+        "host": "18.224.5.254",
+        "port": 8500
+    },
+    "proxy": [
+			{
+				"/account":  "api_account"
+			}
+	],
+    "white_list": [
+        {
+            "path": "/",
+            "methods": [
+                "get",
+				"put"
+            ]
+        }, 
+		{
+			"path": "/account/**",
+			"methods": [
+				"get",
+				"post"
+	]
+		}
+    ],
+	"redis": {
+		"host": "127.0.0.1",
+		"port": 6379,
+		"password": "",
+		"db": 0
+
+	},
+	"jwt": {
+		"secret": "123zxcgh546123snc8kqm345913xf"
+	}
+}

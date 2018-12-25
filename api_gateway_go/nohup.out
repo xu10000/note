@@ -1,0 +1,4 @@
+2018-12-24 15:36:37 INFO     util.py:85 loading libsodium from libsodium.so.23
+2018-12-24 15:36:37 INFO     local.py:50 local start with protocol[auth_sha1_v4] password [b'zx27892509'] method [chacha20] obfs [http_post] obfs_param []
+2018-12-24 15:36:37 INFO     local.py:54 starting local at 127.0.0.1:1090
+2018-12-24 15:36:37 INFO     asyncdns.py:324 dns server: [('119.29.29.29', 53), ('127.0.0.1', 53)]
