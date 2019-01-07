@@ -24,3 +24,12 @@ services:
       - "27017:27017"
     volumes: 
       - /home/xzt/soft/settlementSystemData/mongodb:/etc/mongo
+  rabbitmq:
+    hostname: my-rabbit 
+    image: rabbitmq:3.7
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - /home/xzt/soft/settlementSystemData/rabbitmq/database:/var/lib/rabbitmq/mnesia/rabbit@my-rabbit
+      - /home/xzt/soft/settlementSystemData/rabbitmq/conf:/etc/rabbitmq
