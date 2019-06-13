@@ -235,16 +235,17 @@ class {{.CapName}}Service extends Service {
      * @param {object} obj 项目实体
      */
     async create(obj) {
-        
-        await this.ctx.model.{{.CapName}}.create(obj);
+        return "创建需要解除注释"
+        // await this.ctx.model.{{.CapName}}.create(obj);
     }
     /**
      * 删除
      * @param {string} id id
      */
     async destroy(id) {
-        const obj = await this.show(id);
-        await obj.destroy();
+        return "删除需要解除注释"
+       // const obj = await this.show(id);
+       // await obj.destroy();
     }
     /**
      * 修改
@@ -252,8 +253,9 @@ class {{.CapName}}Service extends Service {
      * @param {object} new_obj 新记录
      */
     async update(id, new_obj) {
-        const old_obj = await this.show(id);
-        await old_obj.update(new_obj);
+        return "更新需要解除注释"
+        // const old_obj = await this.show(id);
+        // await old_obj.update(new_obj);
     }
     /**
      * 根据id查询记录
@@ -291,18 +293,20 @@ class {{.CapName}}Service extends Service {
      * @param {Array} objs 实体对象数组
      */
     async createMany(objs) {
-        objs.forEach(async item => {
-            await this.ctx.model.{{.CapName}}.create(item);
-        });
+        return "创建需要解除注释"
+        // objs.forEach(async item => {
+         //   await this.ctx.model.{{.CapName}}.create(item);
+        // });
     }
     /**
      * 批量删除
      * @param {object} where 条件
      */
     async deleteMany(where) {
-        await this.ctx.model.{{.CapName}}.destroy({
-            where
-        });
+        return "删除需要解除注释"
+        // await this.ctx.model.{{.CapName}}.destroy({
+        //    where
+        //});
     }
     /**
      * 批量更新
@@ -310,9 +314,10 @@ class {{.CapName}}Service extends Service {
      * @param {*} where 条件
      */
     async updateMany(fields, where) {
-        await this.ctx.model.{{.CapName}}.update(fields, {
-            where
-        });
+        return "更新需要解除注释"
+        //await this.ctx.model.{{.CapName}}.update(fields, {
+        //    where
+        //});
     }
     /**
      * 根据条件查询，返回首条记录
@@ -355,8 +360,14 @@ var TicCrud = cli.Command{
 	Name:        "crud",
 	Usage:       "usage: create the duplicate file",
 	Description: "description: create the duplicate file",
-	Flags:       []cli.Flag{},
+	Flags: []cli.Flag{
+		cli.StringFlag{
+			Name:  "model",
+			Usage: "create the model",
+		},
+	},
 	Action: func(c *cli.Context) error {
+		modelName := c.String("model")
 
 		fmt.Println("begin create crud api, you must be in egg project first catalog!")
 		// 判断是否在第一层目录以是否有package.json为准
@@ -383,7 +394,8 @@ var TicCrud = cli.Command{
 			// 判断命名是否规范
 			flag := len(fixReg.Find([]byte(modelPath)))
 			if flag != 0 {
-				panic("文件命名不允许有下划线: " + modelPath)
+				fmt.Println("文件命名不允许有下划线: " + modelPath)
+				continue
 			}
 			//获取文件名和路径
 			fName := reg.FindStringSubmatch(modelPath)[1]
@@ -391,7 +403,10 @@ var TicCrud = cli.Command{
 			rulePath := "./app/rules/" + fName + ".json"
 			controllerPath := "./app/controller/" + fName + ".js"
 			servicePath := "./app/service/" + fName + ".js"
-
+			// 如果传入modelName, 则只创建该model,否则查找下一个
+			if modelName != "" && modelName != fName {
+				continue
+			}
 			// 判断router文件是否存在
 			exist, _ := filepath.Glob(routerPath)
 			// router文件不存在就创建router, controller, service三个文件
